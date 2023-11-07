@@ -64,13 +64,16 @@ pragmaを使用することによってコンパイル内容を詳細に制御�
 * url - URL
 
 特に入れる情報がない場合は`""`を指定してください。
+[(公式Document)](https://sm.alliedmods.net/new-api/core/PluginInfo)
 
 ### public void OnPluginStart(){}
-プラグインの開始時に呼び出される関数です。
+プラグインの開始時に呼び出される関数です。 
 基本的にはプラグインに必要な初期セットアップをここで行います。
+[(公式Document)](https://sm.alliedmods.net/new-api/sourcemod/OnPluginStart)
 
 ### PrintToServer()
-名前のままですが、サーバーのコンソールにメッセージを表示します。
+名前のままですが、サーバーのコンソールにメッセージを表示します。 
+[(公式Document)](https://sm.alliedmods.net/new-api/console/PrintToServer)
 
 ## プラグインのコンパイル
 scriptingフォルダに作成したプラグインのファイルを設置し以下の方法でコンパイルを行えます。

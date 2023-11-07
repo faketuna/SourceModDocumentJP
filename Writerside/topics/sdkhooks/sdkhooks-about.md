@@ -60,7 +60,7 @@ public Action OnTakeDamage(int client, int &attacker, int &inflictor, float &dam
 
 ### SDKHook()
 
-SDKHook関数の使い方は以下のとおりです。([元のドキュメントリンク](https://sm.alliedmods.net/new-api/sdkhooks/SDKHook))
+SDKHook関数の使い方は以下のとおりです。([公式Document](https://sm.alliedmods.net/new-api/sdkhooks/SDKHook))
 ```C++
 SDKHook(int entity, SDKHookType type, SDKHookCB callback)
 ```
@@ -79,7 +79,7 @@ function Action(int victim, int& attacker, int& inflictor, float& damage, int& d
 
 ### SDKUnhook()
 
-バグ回避のためにプレイヤーが切断した際はUnhookしましょう。
+バグ回避のためにプレイヤーが切断した際はUnhookしましょう。 ([公式Document](https://sm.alliedmods.net/new-api/sdkhooks/SDKUnhook))
 
 記述する内容は`SDKHook()`と同じで構いません。
 ```C++
