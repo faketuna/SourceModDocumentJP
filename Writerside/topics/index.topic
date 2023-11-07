@@ -25,6 +25,7 @@
         <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
         <spotlight>
             <a href="lets-make-plugin.md" type="server" summary="プラグイン書き始めたいな～と思った方はこちらへどうぞ、めっちゃ簡易的ですがHello Worldの仕方を書いてます。">初めてのプラグイン作成</a>
+            <a href="lets-make-plugin.md" type="server" summary="なんか２つこれ作んないとDeploy失敗するのでとりあえず追加">ダミー</a>
         </spotlight>
 
         <primary>
