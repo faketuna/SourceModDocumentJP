@@ -3,10 +3,10 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="sourcemod"
-                 name="SourceMod ドキュメント"
-                 start-page="index.md">
+                 name="SourceMod"
+                 start-page="index.topic">
 
-    <toc-element topic="index.md">
+    <toc-element topic="index.topic">
     </toc-element>
     <toc-element topic="lets-make-plugin.md">
         <toc-element topic="1-create-env.md"/>

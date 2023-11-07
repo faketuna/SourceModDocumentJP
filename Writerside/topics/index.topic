@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Title" id="index">
+
+    <!--    A section combines multiple topics dedicated to a specific subject.
+                Add a starting page to provide an overview of the topics in the section.
+                Start with two topics you want to promote in the <spotlight> group,
+                several important topics in the <primary> group (for example, where to start),
+                several less important topics in the <secondary> group (for example, more advanced topics),
+                and optionally add any other relevant topics in the <misc> group as cards and lists of links
+                (maybe related topics from other sections).
+                Only the spotlight section is limited to two topics.
+                For other groups, try to keep the number between 2 and 6, but you can add more if necessary.-->
+
+    <section-starting-page>
+        <title>About</title>
+        <description>
+            SourceModのプラグインを作っているときにこれ忘れちゃうな～であったり、ここつまづいたな～って事を書き留めておく場所です。
+            日本語の記事が少ないのでどうせなら書くか～程度の気分で作ったため、内容は薄いし更新も不定期ですがお役に立てれば幸いです。
+        </description>
+
+        <!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
+        <spotlight>
+            <a href="lets-make-plugin.md" type="server" summary="プラグイン書き始めたいな～と思った方はこちらへどうぞ、めっちゃ簡易的ですがHello Worldの仕方を書いてます。">初めてのプラグイン作成</a>
+        </spotlight>
+
+        <primary>
+            <title>関数等の使い方/応用例</title>
+            <a href="sdkhooks-about.md"/>
+        </primary>
+
+        <secondary>
+            <title>その他の情報</title>
+            <a href="compiler.md"/>
+        </secondary>
+
+    </section-starting-page>
+
+</topic>
