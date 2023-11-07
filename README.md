@@ -14,9 +14,11 @@
 
 [faketuna.github.io/SourceModDocumentJP](https://faketuna.github.io/SourceModDocumentJP)
 
-## 詳細
+## なんで作ったの？
 
-準備中
+SourceModのプラグインを作っているときにこれ忘れちゃうな～であったり、ここつまづいたな～って事を書き留めておく場所です。
+
+日本語の記事が少ないのでどうせなら書くか～程度の気分で作ったため、内容は薄いし更新も不定期ですがお役に立てれば幸いです。
 
 ## ページ生成に使ってるもの
 
