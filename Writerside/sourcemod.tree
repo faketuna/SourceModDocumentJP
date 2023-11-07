@@ -15,4 +15,5 @@
     <toc-element topic="compiler.md">
         <toc-element topic="pragma.md"/>
     </toc-element>
+    <toc-element topic="sdkhooks-about.md"/>
 </instance-profile>
