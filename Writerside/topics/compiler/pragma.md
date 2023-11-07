@@ -72,7 +72,7 @@ void testFunction(){}
 #pragma newdecls required
 
 // Error
-testFunction(client, args){}
+void testFunction(client, args){}
 
 // OK
 void testFunction(int client, int args){}
