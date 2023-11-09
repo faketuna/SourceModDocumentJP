@@ -9,7 +9,7 @@
 * 通常のConsoleコマンド
 * Admin専用コマンド
 
-今回出来上がるコードは以下の内容になります。 ([リポジトリ]()からも確認できます)
+今回出来上がるコードは以下の内容になります。 ([リポジトリ](https://github.com/faketuna/sm-Example-Plugins/blob/main/scripting/command.sp)からも確認できます)
 ```C++
 #include <sourcemod>
 
