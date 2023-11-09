@@ -73,7 +73,7 @@ if(args == 0) {
 }
 ```
 
-### 引数の内容を取得する
+## 引数の内容を取得する
 
 * 文字列として引数の内容を取得するには、`GetCmdArg`関数を使用します。 [(公式ドキュメント)](https://sm.alliedmods.net/new-api/console/GetCmdArg)
 
