@@ -17,3 +17,8 @@ SourceMod等の環境構築に関しては、プラグインを作ろうとし�
 * [SourcePawn](https://marketplace.visualstudio.com/items?itemName=Sarrus.sourcepawn-vscode)
 * [Valve KeyValue Files Support](https://marketplace.visualstudio.com/items?itemName=GEEKiDoS.vdf)
 
+## 参考になるサイト
+
+* [AlliedModders Forum](https://forums.alliedmods.net/forumdisplay.php?f=107)
+* [SourceMod公式ドキュメント](https://sm.alliedmods.net/new-api/)
+* [SourceMod公式ドキュメント(実装例等)](https://wiki.alliedmods.net/Category:SourceMod_Scripting)
