@@ -22,4 +22,4 @@ SourceModのプラグインを作っているときにこれ忘れちゃうな�
 
 ## ページ生成に使ってるもの
 
-* JetBrains Writerside
+* [JetBrains Writerside](https://www.jetbrains.com/ja-jp/writerside/)
