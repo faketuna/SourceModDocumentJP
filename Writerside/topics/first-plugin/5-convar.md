@@ -187,18 +187,16 @@ g_cvPluginEnabled = CreateConVar("sm_plugin_enabled", "1", "Disable/Enable Plugi
 
 ConVarを検索することによって、後からでも特定のConVarのHandleを取得することができます。
 
-今回はコマンドからConVarの内容を取得するコマンドを作成してみましょう。
-
-### 1. コマンドを作る/登録する
-
-前回と前々回に解説したためコマンドのCallback関数の作成と、Registerは飛ばします。 (忘れてしまった方は[ここを見てください](3-first-command.md))
-
-### 2. ConVarを検索する {id=search_cvar}
-
 ConVarを検索するには`FindConVar`関数を使用します。 [(公式ドキュメント)](https://sm.alliedmods.net/new-api/convars/FindConVar)
 
 ```C++
 FindConVar(const char[] name)
+```
+
+使い方の例は以下のとおりです。
+
+```C++
+FindConVar("sv_cheats")
 ```
 
 `FindConVar`関数は、見つかった場合は該当するConVarのHandleを返し、見つからなかった場合は`INVALID_HANDLE`を返します。
@@ -272,11 +270,25 @@ void(ConVar convar, const char[] oldValue, const char[] newValue)
 public void OnCvarChanged(ConVar convar, const char[] oldValue, const char[] newValue)
 ```
 
+<procedure title="convar" id="hook_cvar_callback_val_cvar">
+    <p>ConVarのHandleが格納されています。</p>
+</procedure>
+
+<procedure title="oldValue" id="hook_cvar_callback_val_old">
+    <p>変更前の値が格納されています。</p>
+    <p>例: 値が0から1に変更された場合、oldValueには0が入ります</p>
+</procedure>
+
+<procedure title="newValue" id="hook_cvar_callback_val_new">
+    <p>変更後の値が格納されています。</p>
+    <p>例: 値が0から1に変更された場合、newValueには1が入ります</p>
+</procedure>
+
 ### ConVarをHookする
 
 > Note
 >
-> どちらも使い方に大差ありませんが、`AddChangeHook`のほうが短くかつ簡易的に記述できるためこちらをおすすめします。
+> どちらも使い方に大差ありませんが、`AddChangeHook`のほうが簡潔に記述できるためこちらをおすすめします。
 {style="note"}
 
 <procedure title="HookConVarChange関数を使用したHook" id="hook_cvar_use_func">
