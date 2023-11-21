@@ -94,7 +94,7 @@ PrintToServer("Test!");
 ```
 
 #### `#pragma tabsize`
-調べたのですが情報見つからず...
+`#pragma tabsize 0` とすることでインデントにTabとSpaceが混在していてもコンパイル時の警告を非表示に出来ます。
 
 #### `#pragma unused`
 プログラム内で使用されていない関数/変数のコンパイル時の警告を消すことができます。
