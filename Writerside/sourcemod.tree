@@ -14,6 +14,7 @@
         <toc-element topic="3-first-command.md"/>
         <toc-element topic="4-command-arguments.md"/>
         <toc-element topic="5-convar.md"/>
+        <toc-element topic="6-hook-game-event.md"/>
     </toc-element>
     <toc-element topic="compiler.md">
         <toc-element topic="formatting.md"/>
