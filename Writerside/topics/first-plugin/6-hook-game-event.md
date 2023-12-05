@@ -80,7 +80,7 @@ HookEvent(const char[] name, EventHook callback, EventHookMode mode)
     <p><code>void(Event event, const char[] name, bool dontBroadcast)</code></p>
 </procedure>
 
-<procedure title="callback" id="val_evt_hookmode">
+<procedure title="EventHookMode" id="val_evt_hookmode">
     <p>イベントのHookモードを指定します。</p>
     <p>Hookモードには以下の三種類があり以下のような特徴があります。</p>
     <list>
