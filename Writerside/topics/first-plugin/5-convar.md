@@ -211,18 +211,33 @@ FindConVar("sv_cheats")
 
 ## ConVarから値を取得する {id=get_cvar_value}
 
-ConVarから値を取得するには、以下のいずれかの関数を使用して取得できます。
+ConVarから値を取得するには、以下のいずれかの関数を使用するか
 
 * [`GetConVarBool`](https://sm.alliedmods.net/new-api/convars/GetConVarBool)
 * [`GetConVarFloat`](https://sm.alliedmods.net/new-api/convars/GetConVarFloat)
 * [`GetConVarInt`](https://sm.alliedmods.net/new-api/convars/GetConVarInt)
 * [`GetConVarString`](https://sm.alliedmods.net/new-api/convars/GetConVarString)
 
-<procedure title="Bool, Float, Intの取得" id="cvar_get_value_primitive">
+以下の方法を使用して取得できます。
+
+* [`ConVar.BoolValue`](https://sm.alliedmods.net/new-api/convars/ConVar/BoolValue)
+* [`ConVar.IntValue`](https://sm.alliedmods.net/new-api/convars/ConVar/IntValue)
+* [`ConVar.FloatValue`](https://sm.alliedmods.net/new-api/convars/ConVar/FloatValue)
+
+なお文字列は関数からのみ取得可能です。
+
+<procedure title="Bool, Float, Intの取得 (関数)" id="cvar_get_value_primitive">
     <p>Bool, Float, Intの様なプリミティブ型でConVarの内容を取得したい際は</p>
     <step>プリミティブ型の変数を宣言 (例: <code>int value</code>)</step>
     <step><code>GetConVar**</code>関数を使用し返り値を格納する</step>
     <p>例: <code>value = GetConVarInt(g_cvPluginEnabled)</code></p>
+</procedure>
+
+<procedure title="Bool, Float, Intの取得" id="cvar_get_value_primitive_another">
+    <p>ConVarの内容を直接取得するには</p>
+    <step>プリミティブ型の変数を宣言 (例: <code>int value</code>)</step>
+    <step><code>ConVar.***Value</code>を使用し返り値を格納する</step>
+    <p>例: <code>value = g_cvPluginEnabled.IntValue</code></p>
 </procedure>
 
 <procedure title="文字列の取得" id="cvar_get_value_string">
@@ -234,18 +249,50 @@ ConVarから値を取得するには、以下のいずれかの関数を使用�
 
 ## ConVarの値を設定する {id=set_cvar_value}
 
-ConVarの値を設定するには、以下のいずれかの関数を使用して設定することができます。
+ConVarの値を設定するには、以下のいずれかの関数を使用するか
 
 * [`SetConVarBool`](https://sm.alliedmods.net/new-api/convars/SetConVarBool)
 * [`SetConVarFloat`](https://sm.alliedmods.net/new-api/convars/SetConVarFloat)
 * [`SetConVarInt`](https://sm.alliedmods.net/new-api/convars/SetConVarInt)
 * [`SetConVarString`](https://sm.alliedmods.net/new-api/convars/SetConVarString)
 
-<procedure title="ConVarを設定する例" id="cvar_set_value_primitive">
+以下のメソッドを使用して設定可能です。
+
+* [`ConVar.SetBool`](https://sm.alliedmods.net/new-api/convars/ConVar/SetBool)
+* [`ConVar.SetFloat`](https://sm.alliedmods.net/new-api/convars/ConVar/SetFloat)
+* [`ConVar.SetInt`](https://sm.alliedmods.net/new-api/convars/ConVar/SetInt)
+* [`ConVar.SetString`](https://sm.alliedmods.net/new-api/convars/ConVar/SetString)
+
+<procedure title="ConVarを設定する例 (関数)" id="cvar_set_value_primitive">
     <p>ConVarの内容を設定するには以下の方法を使用します。</p>
     <step><code>SetConVar**(ConVar, Value)</code></step>
     <p>例: <code>SetConVarInt(g_cvPluginEnabled, 1)</code></p>
     <p>例2: <code>SetConVarString(g_cvPluginEnabled, "Value!")</code></p>
+</procedure>
+
+<procedure title="ConVarを設定する例 (メソッド)" id="cvar_set_value_primitive_method">
+    <p>ConVarの内容を設定するには以下の方法を使用します。</p>
+    <step>Int型であれば <code>ConVar.SetInt(int value, bool replicate, bool notify)</code></step>
+    <p>例: <code>g_cvPluginEnabled.SetFloat(1.0, false, false)</code></p>
+    <p>例2: <code>g_cvPluginEnabled.SetString("Value!", false, false)</code></p>
+</procedure>
+
+### ConVarのSetメソッドの引数について
+
+<procedure title="value" id="cvar_set_value_primitive_method_arguments_value">
+    <p>設定したい値です。</p>
+</procedure>
+
+<procedure title="replicate" id="cvar_set_value_primitive_method_arguments_replicate">
+    <p>ConVarの更新情報をクライアントに送信するかを設定できます。</p>
+    <p>ConVarにFCVAR_REPLICATEDフラグがあり、かつクライアントに存在しているConVarの場合のみ効果を発揮します。</p>
+    <p>使えるConVarの例: <code>sv_cheats, mp_friendlyfire, sv_minrate</code></p>
+    <p>使えないConVarの例: SourceMod等でregisterしたConVar等</p>
+</procedure>
+
+<procedure title="notify" id="cvar_set_value_primitive_method_arguments_notify">
+    <p>ConVarの変更通知を出すか出さないかを設定できます。</p>
+    <p>ConVarにFCVAR_NOTIFYフラグがある場合にのみ効果を発揮します。</p>
 </procedure>
 
 ## ConVarの変更をHookする {id=hook_cvar_change}
@@ -289,7 +336,7 @@ public void OnCvarChanged(ConVar convar, const char[] oldValue, const char[] new
 > Note
 >
 > どちらも使い方に大差ありませんが、`AddChangeHook`のほうが簡潔に記述できるためこちらをおすすめします。
-{style="note"}
+> {style="note"}
 
 <procedure title="HookConVarChange関数を使用したHook" id="hook_cvar_use_func">
     <p>以下のような形で使用できます。</p>
@@ -301,7 +348,7 @@ public void OnCvarChanged(ConVar convar, const char[] oldValue, const char[] new
     <p><code>g_cvPluginEnabled.AddChangeHook(OnCvarChanged)</code></p>
 </procedure>
 
-## ConVarのFlagについて
+## ConVarのFlagについて {cvar_about_flags}
 
 Flagの一覧は[`console.inc`](https://github.com/alliedmodders/sourcemod/blob/11c8084ccd530290df459e12b50e5852f777ddee/plugins/include/console.inc#L68-L103)にありますが、今回は比較的使う物のみ紹介します。
 
